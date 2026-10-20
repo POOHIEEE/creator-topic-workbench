@@ -1,0 +1,7 @@
+{
+  "generatedAt": "2026-10-20T00:00:00Z",
+  "demo": true,
+  "authors": [{"id":"demo-author","name":"示例创作者（虚构）","platform":"教学示例","url":"https://example.com/creator"}],
+  "works": [{"id":"demo-work","authorId":"demo-author","title":"我试着用AI做一条短片（虚构）","url":"https://example.com/work","publishedAt":"2026-10-16T00:00:00Z","observedAt":"2026-10-20T00:00:00Z","basis":"metadata","metrics":{"views":null,"likes":null,"favorites":null}}],
+  "topics": [{"id":"demo-topic","workId":"demo-work","category":"AIGC","title":"AI剪的视频，我检查了一遍","audienceProblem":"AI说完成了，实际文件是否能用？","borrow":"从具体交付结果出发，而非介绍功能清单","ownCase":"用自己的短片检查播放、字幕和音轨，公开失败项","validation":["准备一条自有视频","实际运行检查并保留证据","展示修复前后，不声称所有视频都能自动修好"]}]
+}
