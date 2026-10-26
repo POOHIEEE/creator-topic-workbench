@@ -4,7 +4,7 @@
 
 一个作者优先、证据可追溯的 Agent Skill，附零依赖离线看板生成器。适合内容创作者、AI博主和做实践分享的产品经理。
 
-> 当前版本：v0.1.0。私有仓库，尚未公开开源。这是从实际工作流程中提炼的可复用Skill与生成器，不是个人线上工作版的完整源码备份。
+> 当前版本：v0.2.0。私有仓库，尚未公开开源。这是从实际工作流程中提炼的可复用Skill与生成器，不是个人线上工作版的完整源码备份。
 
 ## 为什么做这个
 
@@ -34,6 +34,7 @@
 git clone https://github.com/POOHIEEE/creator-topic-workbench.git
 cd creator-topic-workbench
 node scripts/workbench.mjs examples/evidence.json out
+node scripts/export-briefs.mjs examples/evidence.json out/briefs
 node --test
 ```
 
@@ -47,6 +48,8 @@ node --test
 | --- | --- |
 | `out/index.html` | 作者原作、证据和AIGC/通用选题；展开标题查看转化依据与验证步骤 |
 | `out/qa.json` | 输入数据的校验结果、缺失日期和过期证据提醒；不是内容质量评测 |
+| `out/briefs/index.md` | 按AIGC/通用分类的制作卡索引 |
+| `out/briefs/topic-01.md`等 | 保留作者、原作、自己的案例和验证步骤的Markdown制作卡 |
 
 完整操作与真实资料接入见 [使用指南](USAGE.md)。
 
@@ -118,7 +121,7 @@ USAGE.md                       操作指南与常见问题
 
 ## 测试与隐私
 
-当前7项自动测试覆盖：示例可生成、AIGC/通用分组、未知值与真实零区分、原作关联、旧证据提醒、危险URL拒绝、HTML转义和错误输入。
+当前10项自动测试覆盖：示例可生成、AIGC/通用分组、未知值与真实零区分、原作关联、旧证据提醒、危险URL拒绝、HTML转义和错误输入，以及制作卡来源保留、受控文件名和错误引用拒绝。
 
 `out/`、`.env`、`private/` 与 `local-memory.md` 默认忽略，但忽略规则不是脱敏工具。接真实资料后，请在每次提交前检查文件清单，不上传登录凭据、私密内容、未经许可的媒体或个人工作版记忆。生成的HTML直接包含输入内容，也需要按资料的隐私等级保存和分享。
 

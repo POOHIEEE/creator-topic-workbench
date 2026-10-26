@@ -27,10 +27,13 @@ Use `references/evidence-contract.md` for the JSON input and limitations. From t
 
 ```bash
 node scripts/workbench.mjs examples/evidence.json out
+node scripts/export-briefs.mjs examples/evidence.json out/briefs
 node --test
 ```
 
 The helper validates evidence references and produces a responsive, offline HTML overview plus JSON QA. It does not scrape sites or call an LLM. The agent authors topic transformations using inspected evidence; `basis` identifies whether it saw metadata, a transcript or the full work.
+
+After review, export Markdown production briefs with the second command. Each brief retains its author, source, audience problem, original case and validation checklist. This is a real file export, not proof that filming or generation has run. Filenames are controlled by the exporter rather than untrusted source IDs.
 
 ## Acceptance
 

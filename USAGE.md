@@ -29,9 +29,12 @@ Agent需要另有可用的浏览器、搜索、公开API或你提供的资料。
 
 ```bash
 node scripts/workbench.mjs private/evidence.json out
+node scripts/export-briefs.mjs private/evidence.json out/briefs
 ```
 
 生成器接收已有资料，不会主动访问输入的URL。输入通过校验后才写出HTML与QA；输入错误会以非零退出码停止。
+
+第二个命令导出可供录制准备的Markdown制作卡，索引按AIGC/通用分组。导出保留原作与作者、受众问题、自己的案例和验证步骤；不会伪装成已完成的拍摄结果。
 
 | 集合 | 主要字段 | 注意 |
 | --- | --- | --- |
